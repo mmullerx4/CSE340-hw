@@ -6,7 +6,7 @@
  * Require Statements
  *************************/
 const express = require("express")
-const expressEjsLayouts = require("express-ejs-layouts")
+//const expressEjsLayouts = require("express-ejs-layouts")
 const expressLayouts = require("express-ejs-layouts")
 const env = require("dotenv").config()
 const app = express()
@@ -23,6 +23,9 @@ app.set("layout", "./layouts/layout") // not at views root
  * Routes
  *************************/
 app.use(require("./routes/static"))
+app.get("/",function(req, res) {
+  res.render("index", {title: "Home"})
+}) 
 
 /* ***********************
  * Local Server Information

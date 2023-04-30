@@ -1,6 +1,55 @@
+
 /******* Change Box Model ***************/
 *,
 *:before,
 *:after {
   box-sizing: border-box;
 }
+
+/*@import url*/
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: url(/images/site/checkerboard.jpg); 
+}
+
+main {
+  background-image: url(images/vehicles/delorean=tn.jpg);
+  border: 2px lightskyblue;
+}
+
+#delorean{
+  background-image: url(/images/vehicles/delorean-tn.jpg);
+}
+
+#block {
+  color: lightskyblue;
+  background-color: white; opacity: 0.5;
+}
+
+button {
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  background-color: lightskyblue;
+  padding: 15px 32px;
+  border-radius: 2px;
+  box-shadow: 3px 3px 1px gray;
+}
+
+.upgrade-item {
+  background-color: lightskyblue;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  padding: 5px;
+  margin: 5px;
+  border: 1px black;
+}
+
+
+
+
