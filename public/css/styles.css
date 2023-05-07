@@ -11,13 +11,16 @@
 body {
   font-family: 'Roboto', sans-serif;
   background: url(/images/site/checkerboard.jpg);
-  
 }
 
+a:link .siteName {
+  text-decoration: none;
+}
 #wrapper {
   background: white;
-  border: 10px solid blue;
-  margin: 150px;
+  border: 5px solid blue;
+  margin: 20px 150px;
+  padding: 15px;
 }
 
 #delorean{
