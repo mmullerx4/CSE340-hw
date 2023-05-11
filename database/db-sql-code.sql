@@ -47,16 +47,6 @@ CREATE TABLE IF NOT EXISTS public.account
 
 
 
-
-
-
-
-
-
-
-
-
-
 -- DATA for table 'classification'
 INSERT INTO public.classification (classification_name)
 VALUES ('Custom'),
