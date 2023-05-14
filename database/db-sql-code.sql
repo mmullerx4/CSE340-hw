@@ -45,8 +45,6 @@ CREATE TABLE IF NOT EXISTS public.account
 
 
 
-
-
 -- DATA for table 'classification'
 INSERT INTO public.classification (classification_name)
 VALUES ('Custom'),
@@ -237,6 +235,11 @@ VALUES   (
     5
   );
 
-
+UPDATE
+	inventory
+SET inv_image = REPLACE(inv_image, '/images', '/images/vehicles'),
+	inv_thumbnail = REPLACE(inv_thumbnail, '/images', '/images/vehicles')
+WHERE
+	inv_image = '/images%' or inv_thumbnail = '/images%';
 
 
