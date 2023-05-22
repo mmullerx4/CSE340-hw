@@ -39,3 +39,9 @@ WHERE
 	classification.classification_id = 2;
 
 
+UPDATE
+	inventory
+SET inv_image = REPLACE(inv_image, '/images', '/images/vehicles'),
+	inv_thumbnail = REPLACE(inv_thumbnail, '/images', '/images/vehicles')
+WHERE
+	inv_image = '/images%' or inv_thumbnail = '/images%';

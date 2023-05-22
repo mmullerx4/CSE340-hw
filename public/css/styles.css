@@ -13,26 +13,68 @@ body {
   background: url(/images/site/checkerboard.jpg);
 }
 
-a:link .siteName {
-  text-decoration: none;
-}
 #wrapper {
   background: white;
   border: 5px solid blue;
   margin: 20px 150px;
-  padding: 15px;
+  padding: 20px;
+}
+
+
+#top-header {
+  margin-top: 20px;
+}
+
+.siteName a {
+  text-decoration: none;
+  color: black;
+  font-size: 35px;
+  font-weight: bold;  
+}
+
+#tools {
+  text-align: right;
+  margin-bottom: 50px;
+}
+
+#tools a {
+  text-decoration: none;
+  color: black;
+}
+
+nav {
+  background-color: black;
+  padding: .5px;
+  margin-top: 40px;
+}
+
+nav li {
+  display:inline;
+  color: white;
+  padding: 80px;
+ 
+}
+
+h2 {
+  font-size: 40px;
+  padding: 20px 0 40px;
 }
 
 #delorean{
   background-image: url(/images/vehicles/delorean.jpg);
   background-repeat: no-repeat;
-  background-position: center center;
-  padding: 20px;
+  margin-left: 150px;
+  
 }
 
 #block {
   color: lightskyblue;
-  background-color: white; opacity: 0.5;
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: -80px;
+  padding: 0 10px 50px 0;
+  
+  background: rgba(255, 255, 255, .7);
 }
 
 button {
@@ -46,6 +88,9 @@ button {
   box-shadow: 2px 2px 5px gray;
 }
 
+#review-list li {
+  padding-bottom: 15px;
+}
 .upgrade-item {
   background-color: lightskyblue;
 }
@@ -58,6 +103,8 @@ button {
   margin: 5px;
   border: 1px black;
 }
+
+
 
 
 
