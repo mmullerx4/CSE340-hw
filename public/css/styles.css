@@ -72,8 +72,8 @@ h2 {
   font-size: 20px;
   font-weight: bold;
   margin-left: -80px;
-  padding: 0 10px 50px 0;
-  
+  padding: 20px;
+  width: 10em;
   background: rgba(255, 255, 255, .7);
 }
 
