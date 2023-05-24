@@ -24,10 +24,13 @@ app.set("layout", "./layouts/layout") // not at views root
  * Routes
  *************************/
 app.use(require("./routes/static"))
-app.get("/",function(req, res) {
-  app.get("/", baseController.buildHome)
- // res.render("index", {title: "Home"})
-}) 
+ 
+app.get("/", baseController.buildHome)
+ //res.render("index", {title: "Home"}) //this line causes a crash
+//Inventory routes
+ app.use("/inv", require(".routes/inventoryRoute")) //app.use() Express function that directs app to use resources for parameters
+//"/inv" is a keyword in app to work with enventory-related
+//"require..." is command to bring inventoryRoute file into scope of the server.js (anthing that starts with "/inv")
 
 /* ***********************
  * Local Server Information

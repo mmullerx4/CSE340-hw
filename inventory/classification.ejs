@@ -1,0 +1,12 @@
+<!-- Content Heading -->
+<% if (title) { %> <!-- uses EJS code block to contain a JavaScript if structure to see if "title" exists -->
+<h1><%= title %></h1> <!-- if variable exists it is displayed with an <h1> -->
+<% } else {      
+    res.redirect('/')   
+} %>
+
+<!-- A Message Block -->>
+<!-- <%# messages() %> -->
+
+<!-- Inventory Items Display -->
+<%- grid %> <!-- with unescaped indicator "-" allows html to be displayed-->
