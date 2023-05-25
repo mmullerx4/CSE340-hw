@@ -24,4 +24,44 @@ Util.getNav = async function (req, res, next) { //creates asynch function that e
   return list
 }
 
+/* *************************************
+* Build the classification view HTML
+* ************************************** */
+Util.buildClassificationGrid = async function(data){ //delares function as asynch & expects a data array as parameter
+  let grid     //variable to hold string
+  if(data.length > 0){   //if to see if array is not empty
+    grid = '<ul id="inv-display">' //creates unordered list element & adds it to the grid variable
+    data.forEach(vehicle => {   //forEAch loop to break each element of the data array into vehicle object
+      grid += '<li>'  //lines 9-25 builds single HTML <li>
+      grid += '<a href="../../inv/detail/'+ vehicle.inv_id //surrounds <img>
+      + '" title="View ' + vehicle.inv_make + ' '+ vehicle.inv_model 
+      + 'details"><img src="' + vehicle.inv_thumbnail
+      +'" alt="Image of '+ vehicle.inv_make + ' ' + vehicle.inv_model
+      +' on CSE Motors" /></a>'
+      grid += '<div class="namePrice"' //div for horizontal rul
+      grid += '<hr />'
+      grid += '<h2>'  //contains a <a> with make & model
+      grid += '<a href="../../inv/detail/' + vehicle.inv_id +'" title="View '
+      + vehicle.inv_make + ' ' + vehicle.inv_model + ' details">'
+      + vehicle.inv_make + ' ' + vehicle.inv_model + '</a>'
+      grid += '</h2'
+      grid += '<span>$' //<span> contains a formatted price in US dollars
+      + new Intl.NumberFormat('en-US').format(vehicle.inv_price) + '</span>'
+      grid += '</div>'
+      grid +='</li>'
+    })  //closes forEach loop
+    grid += '</ul>' //closes unordered list
+  } else {  //ends if and opens else for if data array is empty
+    grid += '<p class="notice">Sorry, no matching vehicles could be found.</p>' //stores <p> with a message
+
+  } //ends the else
+  return grid //returns the variable to the calling location
+} //ends the function
+
+
+
+
+
+
+
 module.exports = Util //end function started on line 7

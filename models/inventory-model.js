@@ -11,4 +11,25 @@ async function getClassifications() {  //creates asynchrounous function(that ret
     return await pool.query("SELECT * FROM public.classification ORDER BY classification_name") //returns the SQL query
 }
 
-module.exports = {getClassifications} //exports the function for use elsewhere.
+/* ************************
+ * Get all inventory items and classification_name by classification_id
+ * ************************ */
+async function getInventoryByClassificationId(classification_id) { //declares async function and passes variable containing classification parameter
+    try {    //opens a try - catch block.
+        const data = await pool.query(  //SQL query to read inventory and classification using INNER JOIN
+            "SELECT * FROM public.inventory AS i
+            JOIN public.classification AS c
+            ON i.classification_id = c.classification_id
+            WHERE i.classification_id = $1",
+            [classification_id]
+        )
+        return data.rows //sends the data as an array back to controller (where function was called)
+    } catch (error) {  //ends try and opens the catch with an error variable to store any error
+        console.error("getclassficationsbyid error " + error)  //displays errors
+    }
+}
+
+
+
+
+module.exports = {getClassifications, getInventoryByClassificationId} //exports the function for use elsewhere.
