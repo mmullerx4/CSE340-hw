@@ -38,13 +38,13 @@ Util.buildClassificationGrid = async function(data){ //delares function as async
       + 'details"><img src="' + vehicle.inv_thumbnail
       +'" alt="Image of '+ vehicle.inv_make + ' ' + vehicle.inv_model
       +' on CSE Motors" /></a>'
-      grid += '<div class="namePrice"' //div for horizontal rul
+      grid += '<div class="namePrice">' //div for horizontal rul
       grid += '<hr />'
       grid += '<h2>'  //contains a <a> with make & model
       grid += '<a href="../../inv/detail/' + vehicle.inv_id +'" title="View '
       + vehicle.inv_make + ' ' + vehicle.inv_model + ' details">'
       + vehicle.inv_make + ' ' + vehicle.inv_model + '</a>'
-      grid += '</h2'
+      grid += '</h2>'
       grid += '<span>$' //<span> contains a formatted price in US dollars
       + new Intl.NumberFormat('en-US').format(vehicle.inv_price) + '</span>'
       grid += '</div>'

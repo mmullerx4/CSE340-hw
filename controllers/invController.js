@@ -8,7 +8,7 @@ const invCont = {} //creates empty object in invCont variable
  * *************************** */
 invCont.buildByClassificationId = async function (req, res, next) {   //creates async anonymous functipn which accepts request, response, next stored in buildByClassification method
     const classification_id = req.params.classificationId   //collects the classification_id as named parameter through URL and stores in classification_id variable
-    const data = await invModel.getInventoryByClassificationID(classification_id) //calls the get... awaits return and stores in "data"
+    const data = await invModel.getInventoryByClassificationId(classification_id) //calls the get... awaits return and stores in "data"
     const grid = await utilities.buildClassificationGrid(data) //calls utility function to build a grid for all vehicles
     let nav = await utilities.getNav()  //calls the function to build the nav bar for view and stores in "nav"
     const className = data[0].classification_name  //extracts the name of the classification from the data returned and stores in className
@@ -16,7 +16,7 @@ invCont.buildByClassificationId = async function (req, res, next) {   //creates 
       title: className + " vehicles",  //build the "title" for dynamic head partial
       nav, //contains nav variable and will display nav bar
       grid, //contains the html string containing grid of inventory items
-    }) end the "render" function
+    }) //end the "render" function
 }
  
 module.exports = invCont

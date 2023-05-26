@@ -17,11 +17,8 @@ async function getClassifications() {  //creates asynchrounous function(that ret
 async function getInventoryByClassificationId(classification_id) { //declares async function and passes variable containing classification parameter
     try {    //opens a try - catch block.
         const data = await pool.query(  //SQL query to read inventory and classification using INNER JOIN
-            "SELECT * FROM public.inventory AS i
-            JOIN public.classification AS c
-            ON i.classification_id = c.classification_id
-            WHERE i.classification_id = $1",
-            [classification_id]
+            "SELECT * FROM public.inventory AS i JOIN public.classification AS c ON i.classification_id = c.classification_id WHERE i.classification_id = $1", //this is one string
+            [classification_id] //this is part of the function
         )
         return data.rows //sends the data as an array back to controller (where function was called)
     } catch (error) {  //ends try and opens the catch with an error variable to store any error
