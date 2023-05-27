@@ -58,8 +58,17 @@ Util.buildClassificationGrid = async function(data){ //delares function as async
   return grid //returns the variable to the calling location
 } //ends the function
 
-
-
+/* *******************************
+ * Middleware For Handling Errors
+ * Wrap other function in this for 
+ * General Error Handling
+ * ******************************* */
+Util.handleErrors = fn => (req, res, next) => Promise.resolve(fn(req, res, next)).catch(next) //this is one function
+//"Util.handleErros" delcares the property which is appended to the "Util" object.
+//"fn => (req, res, next) =>" is an arror function named "fn" which accepts reques, response and next parameters along with another arrow function.
+// "Promise.resolve(fn(req, res, next)" is a "wrapper" that accepts a function as a parameter of the "Promise.reslove" function...see more
+//".catch(next) is if there is an error, then the Promise "fails", the error that caused the failure is "caught" and forwarded to the next process in the app. chain.
+//via the "next" function the Express Error Handler will catch the error and then build and deliver the error view to the client.
 
 
 
