@@ -24,7 +24,7 @@ app.set("layout", "./layouts/layout") // not at views root
  * Routes
  *************************/
 app.use(require("./routes/static"))
- 
+//app.get("/", baseController.buildHome)
 app.get("/", utilities.handleErrors(baseController.buildHome)) //Express route handler watching for the base route "/", with no other URL elements.
  //res.render("index", {title: "Home"}) //the middleware function that catches errors & sends to Express Error Handler.
 //Inventory routes

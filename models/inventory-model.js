@@ -24,14 +24,11 @@ async function getInventoryByClassificationId(classification_id) { //declares as
     } catch (error) {  //ends try and opens the catch with an error variable to store any error
         console.error("getclassficationsbyid error " + error)  //displays errors
     }
-
-
 }
 
 /* ****************************
  * Get data for specific vehicle
  ****************************** */
-
 async function getInventoryByInvId(inv_id) {
     try {
         const data1 = await pool.query(
@@ -48,3 +45,4 @@ async function getInventoryByInvId(inv_id) {
 
 
 module.exports = {getClassifications, getInventoryByClassificationId} //exports the function for use elsewhere.
+//module.exports = {getInventory, getInventoryByInvId}
